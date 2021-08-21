@@ -8,7 +8,8 @@ This form is meant to help streamline data flow for tracking of at-risk people i
 2. Open in your browser (double-click file)
 3. Fill out information in the form
 4. Click submit
-5. Send the email
+- This should generate an email with all your entries in the body
+6. Send the email
 
 Adding a reliable structure to the data being submitted to Department of State will enable quicker analysis of the data and a faster response to the need.
 
@@ -17,3 +18,4 @@ Adding a reliable structure to the data being submitted to Department of State w
 - Include free-text 'additional information' box
 - Include tag/label in generated text to indicate versioning of form to allow future growth and backward compatibility
 - Consider hard coding Dept of State email submission address in form (or allowing user input)
+- Include 'clear form' for repeated entries without close/reopen
