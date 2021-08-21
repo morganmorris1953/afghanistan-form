@@ -9,18 +9,98 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<script>
 
+  $( document ).ready(function() {
+    $( "#type" ).change(function() {
+      var value = $( "select#type" ).val();
+      if(value == "usCitizen") {
+        $('#us-cit').show();
+      } else {
+        $('#us-cit').hide();
+      }
+    });
+  });
+</script>
 <div class="container">
   <h2>General Information</h2>
-  <form class="form-horizontal" action="TODO via JS">
-    <div class="form-group">
-      <label for="us-citizen">Type of Application?</label>
-      <select class="form-control" id="us-citizen">
-        <option>U.S. Citizen</option>
-        <option>SIV Applicant Who is Already in Contact w/ State Dept through Operation Allies Refuge</option>
-        <option>Other SIV Applicant in Earlier Stages of Visa Processing</option>
-        <option>Other at-risk Afghan National</option>
-      </select>
+  <form action="TODO via JS" id="infoForm" name="">
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label" for="type">Type of Application?</label>
+      <div class="col-sm-10">
+        <select form="infoForm" class="form-control" name="type" id="type">
+          <option value="">Choose One</option>
+          <option value="usCitizen">U.S. Citizen</option>
+          <option value="sivContact">SIV Applicant Who is Already in Contact w/ State Dept through Operation Allies Refuge</option>
+          <option value="sivStart">Other SIV Applicant in Earlier Stages of Visa Processing</option>
+          <option value="other">Other at-risk Afghan National</option>
+        </select>
+      </div>
+    </div>
+    <div style="display:none" id="us-cit">
+      <div class="form-group row">
+        <label for="partySize" class="col-sm-2 col-form-label">How many total are in the party?</label>
+        <div class="col-sm-10">
+          <input class="form-control" name="partySize" id="partySize" type="number" >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="us-citizen" class="col-sm-2 col-form-label">Are all individuals US citizens?</label>
+        <div class="col-sm-10">
+          <select form="infoForm" class="form-control" name="us-citizen" id="us-citizen">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+        <div class="col-sm-10">
+          <input class="form-control" name="fname" id="fname" type="text" >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+        <div class="col-sm-10">
+          <input class="form-control" name="lname" id="lname" type="text" >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="dob" class="col-sm-2 col-form-label">DOB</label>
+        <div class="col-sm-10">
+          <input class="form-control" name="dob" id="dob" type="text" >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="Phone" class="col-sm-2 col-form-label">Phone Number</label>
+        <div class="col-sm-10">
+          <input class="form-control" name="Phone" id="Phone" type="text" >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+          <input class="form-control" name="email" id="email" type="email" >
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="stateReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with State Department?</label>
+        <div class="col-sm-10">
+          <select form="infoForm" class="form-control" name="stateReg" id="stateReg">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="stepReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with State Dept’s Smart Traveler Enrollment Program (STEP)?</label>
+        <div class="col-sm-10">
+          <select form="infoForm" class="form-control" name="stepReg" id="stepReg">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+          </select>
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
