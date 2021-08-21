@@ -1,164 +1,260 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Citizen Information Form</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-<script>
-  $( document ).ready(function() {
-    $( "#type" ).change(function() {
-      var value = $( "select#type" ).val();
-      if(value == "usCitizen") {
-        $('#us-cit').show();
-      } else {
-        $('#us-cit').hide();
-      }
-      if(value == "sivContact") {
-        $('#siv-contact').show();
-      } else {
-        $('#siv-contact').hide();
-      }
-      if(value == "sivStart") {
-        $('#siv-nocontact').show();
-      } else {
-        $('#siv-nocontact').hide();
-      }
-      if(value == "other") {
-        $('#other').show();
-      } else {
-        $('#other').hide();
-      }
+  <script>
+    $(document).ready(function () {
+      $("#type").change(function () {
+        var value = $("select#type").val();
+        if (value == "usCitizen") {
+          $('#us-cit').show();
+        } else {
+          $('#us-cit').hide();
+        }
+        if (value == "sivContact") {
+          $('#siv-contact').show();
+        } else {
+          $('#siv-contact').hide();
+        }
+        if (value == "sivStart") {
+          $('#siv-nocontact').show();
+        } else {
+          $('#siv-nocontact').hide();
+        }
+        if (value == "other") {
+          $('#other').show();
+        } else {
+          $('#other').hide();
+        }
+      });
+      $("#stateReg").change(function () {
+        var value = $("select#stateReg").val();
+        console.log(value);
+        if (value == "No") {
+          $('#regWState').removeClass('d-none');
+          $('#regWState').show();
+        } else {
+          $('#regWState').hide();
+        }
+      });
+      $("#stepReg").change(function () {
+        var value = $("select#stepReg").val();
+        console.log(value);
+        if (value == "No") {
+          $('#regWStep').removeClass('d-none');
+          $('#regWStep').show();
+        } else {
+          $('#regWStep').hide();
+        }
+      });
     });
-    $( "#stateReg" ).change(function() {
-      var value = $( "select#stateReg" ).val();
-      console.log(value);
-      if(value == "No") {
-        $('#regWState').removeClass('d-none');
-        $('#regWState').show();
-      } else {
-        $('#regWState').hide();
-      }
-    });
-    $( "#stepReg" ).change(function() {
-      var value = $( "select#stepReg" ).val();
-      console.log(value);
-      if(value == "No") {
-        $('#regWStep').removeClass('d-none');
-        $('#regWStep').show();
-      } else {
-        $('#regWStep').hide();
-      }
-    });
-  });
-</script>
-<div class="container">
-  <h2>General Information</h2>
-  <form action="TODO via JS" id="infoForm" name="">
-    <div class="form-group row">
-      <label class="col-sm-2 col-form-label" for="type">Type of Application?</label>
-      <div class="col-sm-10">
-        <select form="infoForm" class="form-control" name="type" id="type">
-          <option value="">Choose One</option>
-          <option value="usCitizen">U.S. Citizen</option>
-          <option value="sivContact">SIV Applicant Who is Already in Contact w/ State Dept through Operation Allies Refuge</option>
-          <option value="sivStart">Other SIV Applicant in Earlier Stages of Visa Processing</option>
-          <option value="other">Other at-risk Afghan National</option>
-        </select>
-      </div>
-    </div>
-    <div style="display:none" id="us-cit">
-      <h3>US Citizen Information</h3>
+  </script>
+  <div class="container">
+    <h2>General Information</h2>
+    <form action="TODO via JS" id="infoForm" name="">
       <div class="form-group row">
-        <label for="partySize" class="col-sm-2 col-form-label">How many total are in the party?</label>
+        <label class="col-sm-2 col-form-label" for="type">Type of Application?</label>
         <div class="col-sm-10">
-          <input class="form-control" name="partySize" id="partySize" type="number" >
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="us-citizen" class="col-sm-2 col-form-label">Are all individuals US citizens?</label>
-        <div class="col-sm-10">
-          <select form="infoForm" class="form-control" name="us-citizen" id="us-citizen">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+          <select form="infoForm" class="form-control" name="type" id="type">
+            <option value="">Choose One</option>
+            <option value="usCitizen">U.S. Citizen</option>
+            <option value="sivContact">SIV Applicant Who is Already in Contact w/ State Dept through Operation Allies
+              Refuge</option>
+            <option value="sivStart">Other SIV Applicant in Earlier Stages of Visa Processing</option>
+            <option value="other">Other at-risk Afghan National</option>
           </select>
         </div>
       </div>
-      <div class="form-group row">
-        <label for="fname" class="col-sm-2 col-form-label">First Name</label>
-        <div class="col-sm-10">
-          <input class="form-control" name="fname" id="fname" type="text" >
+      <div style="display:none" id="us-cit">
+        <h3>US Citizen Information</h3>
+        <div class="form-group row">
+          <label for="partySize" class="col-sm-2 col-form-label">How many total are in the party?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="partySize" id="partySize" type="number">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="us-citizen" class="col-sm-2 col-form-label">Are all individuals US citizens?</label>
+          <div class="col-sm-10">
+            <select form="infoForm" class="form-control" name="us-citizen" id="us-citizen">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="fname" id="fname" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="lname" id="lname" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="dob" id="dob" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Phone" class="col-sm-2 col-form-label">Phone Number</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="Phone" id="Phone" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="email" id="email" type="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="stateReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with
+            State Department?</label>
+          <div class="col-sm-10">
+            <select form="infoForm" class="form-control" name="stateReg" id="stateReg">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+        <div id="regWState" class="alert alert-danger d-none" role="alert">
+          Please direct them to complete the <a class="alert-link" href="">U.S. Embassy Kabul Repatriation Assistance
+            Request</a>
+        </div>
+        <div class="form-group row">
+          <label for="stepReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with
+            State Dept’s Smart Traveler Enrollment Program (STEP)?</label>
+          <div class="col-sm-10">
+            <select form="infoForm" class="form-control" name="stepReg" id="stepReg">
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+        </div>
+        <div id="regWStep" class="alert alert-danger d-none" role="alert">
+          Please direct them to sign up ASAP to receive travel and health notifications from the U.S. Embassy.
         </div>
       </div>
-      <div class="form-group row">
-        <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
-        <div class="col-sm-10">
-          <input class="form-control" name="lname" id="lname" type="text" >
+      <div style="display:none" id="siv-contact">
+        <h3>SIV, In Contact with State Department</h3>
+        <div class="form-group row">
+          <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="fname" id="fname" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
-        <div class="col-sm-10">
-          <input class="form-control" name="dob" id="dob" type="text" >
+        <div class="form-group row">
+          <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="lname" id="lname" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="Phone" class="col-sm-2 col-form-label">Phone Number</label>
-        <div class="col-sm-10">
-          <input class="form-control" name="Phone" id="Phone" type="text" >
+        <div class="form-group row">
+          <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="dob" id="dob" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="email" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-          <input class="form-control" name="email" id="email" type="email" >
+        <div class="form-group row">
+          <label for="Phone" class="col-sm-2 col-form-label">Phone Number</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="Phone" id="Phone" type="text">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="stateReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with State Department?</label>
-        <div class="col-sm-10">
-          <select form="infoForm" class="form-control" name="stateReg" id="stateReg">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="email" id="email" type="email">
+          </div>
         </div>
-      </div>
-      <div id="regWState" class="alert alert-danger d-none" role="alert">
-        Please direct them to complete the <a class="alert-link" href="">U.S. Embassy Kabul Repatriation Assistance Request</a>
-      </div>
-      <div class="form-group row">
-        <label for="stepReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with State Dept’s Smart Traveler Enrollment Program (STEP)?</label>
-        <div class="col-sm-10">
-          <select form="infoForm" class="form-control" name="stepReg" id="stepReg">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-          </select>
+        <div class="form-group row">
+          <label for="active-passport" class="col-sm-2 col-form-label">Does the individual have an active
+            passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="active-passport" id="active-passport" type="active-passport">
+          </div>
         </div>
-      </div>
-      <div id="regWStep" class="alert alert-danger d-none" role="alert">
-        Please direct them to sign up ASAP to receive travel and health notifications from the U.S. Embassy.
-      </div>
-    </div>
-    <div style="display:none" id="siv-contact">
-      <h3>SIV, In Contact with State Department</h3>
-    </div>
-    <div style="display:none" id="siv-nocontact">
-      <h3>SIV, Not in contact with State Department</h3>
-    </div>
-    <div style="display:none" id="other">
-      <h3>Other At-Risk Afghan Nationals Information</h3>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default">Submit</button>
-      </div>
-    </div>
-  </form>
-</div>
+        <div class="form-group row">
+          <label for="passport-country" class="col-sm-2 col-form-label">Which country issued the passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="passport-country" id="passport-country" type="passport-country">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="possess-passport" class="col-sm-2 col-form-label">Does the individual have possession of the
+            passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="possess-passport" id="possess-passport" type="possess-passport">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="passport-valid" class="col-sm-2 col-form-label">If not is the passport still valid?
+            Expired?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="passport-valid" id="passport-valid" type="passport-valid">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="visa-active" class="col-sm-2 col-form-label">Does the individual have a Visa?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="visa-active" id="visa-active" type="visa-active">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="visa-type" class="col-sm-2 col-form-label">If so, what type of Visa?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="visa-type" id="visa-type" type="visa-type">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="visa-tracking" class="col-sm-2 col-form-label">What is the Visa tracking number?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="visa-tracking" id="visa-tracking" type="visa-type">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="visa-possession" class="col-sm-2 col-form-label">Does the individual have the Visa in their
+            possession?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="visa-possession" id="visa-possession" type="visa-possession">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="visa-flight" class="col-sm-2 col-form-label">If this person has a Visa, were they scheduled to
+            depart Afghanistan on a commercial flight before flights were cancelled?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="visa-flight" id="visa-flight" type="visa-flight">
+          </div>
+        </div>
+        <div style="display:none" id="siv-nocontact">
+          <h3>SIV, Not in contact with State Department</h3>
+        </div>
+        <div style="display:none" id="other">
+          <h3>Other At-Risk Afghan Nationals Information</h3>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-default">Submit</button>
+          </div>
+        </div>
+    </form>
+  </div>
 
 </body>
+
 </html>
