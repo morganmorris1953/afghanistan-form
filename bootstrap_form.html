@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
   <title>Citizen Information Form</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 <script>
-
   $( document ).ready(function() {
     $( "#type" ).change(function() {
       var value = $( "select#type" ).val();
@@ -18,6 +17,26 @@
         $('#us-cit').show();
       } else {
         $('#us-cit').hide();
+      }
+    });
+    $( "#stateReg" ).change(function() {
+      var value = $( "select#stateReg" ).val();
+      console.log(value);
+      if(value == "No") {
+        $('#regWState').removeClass('d-none');
+        $('#regWState').show();
+      } else {
+        $('#regWState').hide();
+      }
+    });
+    $( "#stepReg" ).change(function() {
+      var value = $( "select#stepReg" ).val();
+      console.log(value);
+      if(value == "No") {
+        $('#regWStep').removeClass('d-none');
+        $('#regWStep').show();
+      } else {
+        $('#regWStep').hide();
       }
     });
   });
@@ -38,6 +57,7 @@
       </div>
     </div>
     <div style="display:none" id="us-cit">
+      <h3>US Citizen Information</h3>
       <div class="form-group row">
         <label for="partySize" class="col-sm-2 col-form-label">How many total are in the party?</label>
         <div class="col-sm-10">
@@ -66,7 +86,7 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="dob" class="col-sm-2 col-form-label">DOB</label>
+        <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
         <div class="col-sm-10">
           <input class="form-control" name="dob" id="dob" type="text" >
         </div>
@@ -92,6 +112,9 @@
           </select>
         </div>
       </div>
+      <div id="regWState" class="alert alert-danger d-none" role="alert">
+        Please direct them to complete the <a class="alert-link" href="">U.S. Embassy Kabul Repatriation Assistance Request</a>
+      </div>
       <div class="form-group row">
         <label for="stepReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with State Dept’s Smart Traveler Enrollment Program (STEP)?</label>
         <div class="col-sm-10">
@@ -100,6 +123,9 @@
             <option value="No">No</option>
           </select>
         </div>
+      </div>
+      <div id="regWStep" class="alert alert-danger d-none" role="alert">
+        Please direct them to sign up ASAP to receive travel and health notifications from the U.S. Embassy.
       </div>
     </div>
     <div class="form-group">
