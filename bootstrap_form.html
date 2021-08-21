@@ -89,6 +89,7 @@
             <select form="infoForm" class="form-control" name="us-citizen" id="us-citizen">
               <option value="Yes">Yes</option>
               <option value="No">No</option>
+              <option value="Unknown">Unknown</option>
             </select>
           </div>
         </div>
@@ -183,76 +184,281 @@
           </div>
         </div>
         <div class="form-group row">
+          <label for="nationality" class="col-sm-2 col-form-label">Nationality</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="nationality" id="nationality" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="country-birth" class="col-sm-2 col-form-label">Country of birth</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="country-birth" id="country-birth" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
           <label for="active-passport" class="col-sm-2 col-form-label">Does the individual have an active
             passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="active-passport" id="active-passport" type="active-passport">
+            <input class="form-control" name="active-passport" id="active-passport" type="text">
           </div>
         </div>
         <div class="form-group row">
           <label for="passport-country" class="col-sm-2 col-form-label">Which country issued the passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="passport-country" id="passport-country" type="passport-country">
+            <input class="form-control" name="passport-country" id="passport-country" type="text">
           </div>
         </div>
         <div class="form-group row">
           <label for="possess-passport" class="col-sm-2 col-form-label">Does the individual have possession of the
             passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="possess-passport" id="possess-passport" type="possess-passport">
+            <input class="form-control" name="possess-passport" id="possess-passport" type="text">
           </div>
         </div>
         <div class="form-group row">
           <label for="passport-valid" class="col-sm-2 col-form-label">If not is the passport still valid?
             Expired?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="passport-valid" id="passport-valid" type="passport-valid">
+            <input class="form-control" name="passport-valid" id="passport-valid" type="text">
           </div>
         </div>
         <div class="form-group row">
           <label for="visa-active" class="col-sm-2 col-form-label">Does the individual have a Visa?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="visa-active" id="visa-active" type="visa-active">
+            <input class="form-control" name="visa-active" id="visa-active" type="text">
           </div>
         </div>
         <div class="form-group row">
           <label for="visa-type" class="col-sm-2 col-form-label">If so, what type of Visa?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="visa-type" id="visa-type" type="visa-type">
+            <input class="form-control" name="visa-type" id="visa-type" type="text">
           </div>
         </div>
         <div class="form-group row">
           <label for="visa-tracking" class="col-sm-2 col-form-label">What is the Visa tracking number?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="visa-tracking" id="visa-tracking" type="visa-type">
+            <input class="form-control" name="visa-tracking" id="visa-tracking" type="text">
           </div>
         </div>
         <div class="form-group row">
           <label for="visa-possession" class="col-sm-2 col-form-label">Does the individual have the Visa in their
             possession?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="visa-possession" id="visa-possession" type="visa-possession">
+            <input class="form-control" name="visa-possession" id="visa-possession" type="text">
           </div>
         </div>
         <div class="form-group row">
           <label for="visa-flight" class="col-sm-2 col-form-label">If this person has a Visa, were they scheduled to
             depart Afghanistan on a commercial flight before flights were cancelled?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="visa-flight" id="visa-flight" type="visa-flight">
+            <input class="form-control" name="visa-flight" id="visa-flight" type="text">
           </div>
         </div>
-        <div style="display:none" id="siv-nocontact">
-          <h3>SIV, Not in contact with State Department</h3>
-        </div>
-        <div style="display:none" id="other">
-          <h3>Other At-Risk Afghan Nationals Information</h3>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-            <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+      <div style="display:none" id="siv-nocontact">
+        <h3>SIV, Not in contact with State Department</h3>
+        <div class="form-group row">
+          <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="fname" id="fname" type="text">
           </div>
         </div>
-    </form>
+        <div class="form-group row">
+          <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="lname" id="lname" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="dob" id="dob" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Phone" class="col-sm-2 col-form-label">Phone Number</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="Phone" id="Phone" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="email" id="email" type="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="nationality" class="col-sm-2 col-form-label">Nationality</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="nationality" id="nationality" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="country-birth" class="col-sm-2 col-form-label">Country of birth</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="country-birth" id="country-birth" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="active-passport" class="col-sm-2 col-form-label">Does the individual have an active
+            passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="active-passport" id="active-passport" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="passport-country" class="col-sm-2 col-form-label">Which country issued the passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="passport-country" id="passport-country" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="possess-passport" class="col-sm-2 col-form-label">Does the individual have possession of the
+            passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="possess-passport" id="possess-passport" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="passport-valid" class="col-sm-2 col-form-label">If not, is the passport still valid?
+            Expired?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="passport-valid" id="passport-valid" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="siv-application" class="col-sm-2 col-form-label">Has the individual submitted an SIV
+            application?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="siv-application" id="siv-application" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="visa-tracking" class="col-sm-2 col-form-label">What is the Visa tracking number?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="visa-tracking" id="visa-tracking" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="dos-contact" class="col-sm-2 col-form-label">Has the individual been contacted by the US State
+            Department?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="dos-contact" id="dos-contact" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="com-approved" class="col-sm-2 col-form-label">Has the SIV application been approved by Chief of
+            Mission?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="com-approved" id="com-approved" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="status-details" class="col-sm-2 col-form-label">Any other details on status of SIV or other Visa
+            application?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="status-details" id="status-details" type="text">
+          </div>
+        </div>
+      </div>
+      <div style="display:none" id="other">
+        <h3>Other At-Risk Afghan Nationals Information</h3>
+        <div class="form-group row">
+          <label for="fname" class="col-sm-2 col-form-label">First Name</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="fname" id="fname" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="lname" class="col-sm-2 col-form-label">Last Name</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="lname" id="lname" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="dob" class="col-sm-2 col-form-label">Date of Birth</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="dob" id="dob" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Phone" class="col-sm-2 col-form-label">Phone Number</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="Phone" id="Phone" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="email" class="col-sm-2 col-form-label">Email</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="email" id="email" type="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="nationality" class="col-sm-2 col-form-label">Nationality:</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="nationality" id="nationality" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="country-birth" class="col-sm-2 col-form-label">Country of birth:</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="country-birth" id="country-birth" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="active-passport" class="col-sm-2 col-form-label">Does the individual have an active
+            passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="active-passport" id="active-passport" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="passport-country" class="col-sm-2 col-form-label">Which country issued the passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="passport-country" id="passport-country" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="possess-passport" class="col-sm-2 col-form-label">Does the individual have possession of the
+            passport?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="possess-passport" id="possess-passport" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="passport-valid" class="col-sm-2 col-form-label">If not is the passport still valid?
+            Expired?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="passport-valid" id="passport-valid" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="us-agency" class="col-sm-2 col-form-label">What US agency did you work for/with?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="us-agency" id="us-agency" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="form-submit" class="col-sm-2 col-form-label">Has that agency submitted Form I-129 request for a
+            P1/P2 Visa to US State Dept?</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="form-submit" id="form-submit" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="at-risk" class="col-sm-2 col-form-label">Why is that individual considered "at-risk?"</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="at-risk" id="at-risk" type="text">
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-default">Submit</button>
+    </div>
+  </div>
+  </form>
   </div>
 
 </body>
