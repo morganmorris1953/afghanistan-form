@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>US Citizen data form</title>
+</head>
+<body>
+<div>
+    <h1>US citizens and family members</h1>
+    <form action="mailto:testemail@gmail.com">
+        <label for="is_citizen">Is the individual a US citizen?</label><br>
+        <input id="is_citizen" name="is_citizen" type="checkbox"><br>
+        <label for="party_size">How many are in the party?</label><br>
+        <input id="party_size" name="party_size" type="text"><br><br>
+
+        <label for="all_citizens">Is everyone in the party a US citizen?</label><br>
+        <input id="all_citizens" name="party_size" type="checkbox"><br>
+
+        <label for="fname">First name:</label><br>
+        <input id="fname" name="fname" type="text"><br>
+
+        <label for="lname">Last name:</label><br>
+        <input id="lname" name="lname" type="text"><br>
+
+        <label for="dob">Date of birth:</label><br>
+        <input id="dob" name="dob" type="date"><br>
+        <h2>Contact information:</h2><br>
+        <label for="tel_number">Telephone number:</label><br>
+        <input id="tel_number" name="tel_number" type="text"><br>
+        <label for="whatsapp_yn">Whatsapp capable?</label><br>
+        <input id="whatsapp_yn" name="whatsapp" type="checkbox"><br>
+        <label for="whatsapp_num">Whatsapp number</label><br>
+        <input id="whatsapp_num" name="whatsapp_num" type="text"><br>
+        <h2>Past registration</h2>
+        <label for="repat_registered">Has the individual (US Citizens only) registered with State
+            Department?</label><br>
+        <input id="repat_registered" name="repat_registered" type="checkbox"><br>
+        <p> If not, please direct them to complete the U.S. Embassy Kabul Repatriation Assistance Request
+        <p/>
+        <label for="step_registered">Has the individual (US Citizens only) registered with State Dept’s Smart Traveler
+            Enrollment Program (STEP)?</label><br>
+        <input id="step_registered" name="step_registered" type="checkbox"><br>
+        <p>If not, please direct them to sign up ASAP to receive travel and health notifications from the U.S. Embassy
+        <p/>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+</body>
+</html>
