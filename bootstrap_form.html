@@ -78,16 +78,18 @@
         var type = "Other at-risk Afghan National";
         if (value == "usCitizen") {
           type = "U.S. Citizen";
-          template = ``;
+          template = `###USC-TEMPLATE###`;
         } else if (value == "sivContact") {
           type = "SIV Applicant Who is Already in Contact w/ State Dept through Operation Allies Refuge";
-          template = ``;
+          template = `###SIVC-TEMPLATE###`;
         } else if (value == "sivStart") {
           type = "Other SIV Applicant in Earlier Stages of Visa Processing";
-          template = ``;
+          template = `###SIVU-TEMPLATE###`;
+        } else {
+          template = `###OTHER-TEMPLATE###`;
         }
-        var email = "test@test.com";
-        var subject = "Afghanistan Request";
+        var email = "###EMAIL###";
+        var subject = "###EMAIL-SUBJECT###";
         location.href = `mailto:${email}?subject=${subject}&body=${template}`;
         console.log(prefix);
         console.log(data);
