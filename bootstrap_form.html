@@ -277,7 +277,11 @@
         <div class="form-group row">
           <label for="sivc:activepassport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:activepassport" id="sivc:activepassport" type="text">
+            <select form="infoForm" class="form-control" name="sivc:activepassport" id="sivc:activepassport">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
@@ -289,19 +293,31 @@
         <div class="form-group row">
           <label for="sivc:possesspassport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:possesspassport" id="sivc:possesspassport" type="text">
+            <select form="infoForm" class="form-control" name="sivc:possesspassport" id="sivc:possesspassport">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
           <label for="sivc:passportvalid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:passportvalid" id="sivc:passportvalid" type="text">
+            <select form="infoForm" class="form-control" name="sivc:passportvalid" id="sivc:passportvalid">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
           <label for="sivc:visaactive" class="col-sm-2 col-form-label">Does the individual have a Visa?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:visaactive" id="sivc:visaactive" type="text">
+            <select form="infoForm" class="form-control" name="sivc:visaactive" id="sivc:visaactive">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
@@ -319,7 +335,11 @@
         <div class="form-group row">
           <label for="sivc:visapossession" class="col-sm-2 col-form-label">Are they carrying the visa?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:visapossession" id="sivc:visapossession" type="text">
+            <select form="infoForm" class="form-control" name="sivc:visapossession" id="sivc:visapossession">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
@@ -394,7 +414,11 @@
         <div class="form-group row">
           <label for="sivu:activepassport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:activepassport" id="sivu:activepassport" type="text">
+            <select form="infoForm" class="form-control" name="sivu:activepassport" id="sivu:activepassport">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
@@ -406,20 +430,32 @@
         <div class="form-group row">
           <label for="sivu:possesspassport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:possesspassport" id="sivu:possesspassport" type="text">
+            <select form="infoForm" class="form-control" name="sivu:possesspassport" id="sivu:possesspassport">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
           <label for="sivu:passportvalid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:passportvalid" id="sivu:passportvalid" type="text">
+            <select form="infoForm" class="form-control" name="sivu:passportvalid" id="sivu:passportvalid">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
           <label for="sivu:sivapplication" class="col-sm-2 col-form-label">Has the individual submitted an SIV
             application?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:sivapplication" id="sivu:sivapplication" type="text">
+            <select form="infoForm" class="form-control" name="sivu:sivapplication" id="sivu:sivapplication">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
@@ -432,13 +468,21 @@
           <label for="sivu:doscontact" class="col-sm-2 col-form-label">Has the individual been contacted by the US
             gov?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:doscontact" id="sivu:doscontact" type="text">
+            <select form="infoForm" class="form-control" name="sivu:doscontact" id="sivu:doscontact">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
           <label for="sivu:comapproved" class="col-sm-2 col-form-label">Has the SIV application been approved?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:comapproved" id="sivu:comapproved" type="text">
+            <select form="infoForm" class="form-control" name="sivu:comapproved" id="sivu:comapproved">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
@@ -513,7 +557,11 @@
         <div class="form-group row">
           <label for="other:activepassport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:activepassport" id="other:activepassport" type="text">
+            <select form="infoForm" class="form-control" name="other:activepassport" id="other:activepassport">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
@@ -525,13 +573,21 @@
         <div class="form-group row">
           <label for="other:possesspassport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:possesspassport" id="other:possesspassport" type="text">
+            <select form="infoForm" class="form-control" name="other:possesspassport" id="other:possesspassport">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
           <label for="other:passportvalid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:passportvalid" id="other:passportvalid" type="text">
+            <select form="infoForm" class="form-control" name="other:passportvalid" id="other:passportvalid">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
@@ -544,7 +600,11 @@
           <label for="other:formsubmit" class="col-sm-2 col-form-label">Has that agency submitted Form I-129
             request?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:formsubmit" id="other:formsubmit" type="text">
+            <select form="infoForm" class="form-control" name="other:formsubmit" id="other:formsubmit">
+              <option default>Choose one</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
         </div>
         <div class="form-group row">
