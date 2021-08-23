@@ -25,6 +25,8 @@ other = otherf.read();
 otherf.close()
 
 
+html=html_slimmer( html.strip().replace('\n',' ').replace('\t',' ').replace('\r',' ')  )
+
 html = html.replace("###USC-TEMPLATE###", usc);
 html = html.replace("###SIVC-TEMPLATE###", sivc);
 html = html.replace("###SIVU-TEMPLATE###", sivu);
@@ -32,8 +34,6 @@ html = html.replace("###OTHER-TEMPLATE###", other);
 html = html.replace("###EMAIL###", "test@test.com");
 html = html.replace("###EMAIL-SUBJECT###", "Afghanistan Email");
 
-htmlm=html_slimmer( html.strip().replace('\n',' ').replace('\t',' ').replace('\r',' ')  )
-
 out = open("email.min.html","w")
-out.write(htmlm)
+out.write(html)
 out.close()
