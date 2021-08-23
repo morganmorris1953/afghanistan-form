@@ -57,7 +57,7 @@
           $('#regWStep').hide();
         }
       });
-      $( "#infoForm" ).submit(function( event ) {
+      $("#infoForm").submit(function (event) {
         event.preventDefault();
         var value = $("select#type").val();
         var prefix = "other";
@@ -69,11 +69,11 @@
         } else if (value == "sivStart") {
           prefix = "sivu";
         }
-        var data = $(this).serializeArray().reduce(function(obj, item) {
-            if(item.name.includes(prefix +":")) {
-              obj[item.name.split(':')[1]] = item.value;
-            }
-            return obj;
+        var data = $(this).serializeArray().reduce(function (obj, item) {
+          if (item.name.includes(prefix + ":")) {
+            obj[item.name.split(':')[1]] = item.value;
+          }
+          return obj;
         }, {});
         var type = "Other at-risk Afghan National";
         if (value == "usCitizen") {
@@ -145,7 +145,7 @@
         <div class="form-group row">
           <label for="usc:dob" class="col-sm-2 col-form-label">Date of Birth</label>
           <div class="col-sm-10">
-            <input class="form-control" name="usc:dob" id="usc:dob" type="text">
+            <input class="form-control" name="usc:dob" id="usc:dob" type="date">
           </div>
         </div>
         <div class="form-group row">
@@ -155,8 +155,7 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="usc:whatsapp" class="col-sm-2 col-form-label">What is the contact info if the individual has
-            Whatsapp?</label>
+          <label for="usc:whatsapp" class="col-sm-2 col-form-label">Whatsapp</label>
           <div class="col-sm-10">
             <input class="form-control" name="usc:whatsapp" id="usc:whatsapp" type="text">
           </div>
@@ -168,8 +167,19 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="usc:stateReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with
-            State Department?</label>
+          <label for="usc:location" class="col-sm-2 col-form-label">Current location</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="usc:location" id="usc:location" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="usc:intent" class="col-sm-2 col-form-label">Intentions</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="usc:intent" id="usc:intent" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="usc:stateReg" class="col-sm-2 col-form-label">Registered with DoS?</label>
           <div class="col-sm-10">
             <select form="infoForm" class="form-control" name="usc:stateReg" id="usc:stateReg">
               <option value="Yes">Yes</option>
@@ -182,8 +192,7 @@
             Request</a>
         </div>
         <div class="form-group row">
-          <label for="usc:stepReg" class="col-sm-2 col-form-label">Has the individual (US Citizens only) registered with
-            State Dept’s Smart Traveler Enrollment Program (STEP)?</label>
+          <label for="usc:stepReg" class="col-sm-2 col-form-label">Enrolled in STEP?</label>
           <div class="col-sm-10">
             <select form="infoForm" class="form-control" name="usc:stepReg" id="usc:stepReg">
               <option value="Yes">Yes</option>
@@ -193,6 +202,12 @@
         </div>
         <div id="regWStep" class="alert alert-danger d-none" role="alert">
           Please direct them to sign up ASAP to receive travel and health notifications from the U.S. Embassy.
+        </div>
+        <div class="form-group row">
+          <label for="usc:notes" class="col-sm-2 col-form-label">Additional information</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="usc:notes" id="usc:notes" type="text">
+          </div>
         </div>
       </div>
       <div style="display:none" id="siv-contact">
@@ -212,7 +227,7 @@
         <div class="form-group row">
           <label for="sivc:dob" class="col-sm-2 col-form-label">Date of Birth</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:dob" id="sivc:dob" type="text">
+            <input class="form-control" name="sivc:dob" id="sivc:dob" type="date">
           </div>
         </div>
         <div class="form-group row">
@@ -222,8 +237,7 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:whatsapp" class="col-sm-2 col-form-label">What is the contact info if the individual has
-            Whatsapp?</label>
+          <label for="sivc:whatsapp" class="col-sm-2 col-form-label">Whatsapp</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivc:whatsapp" id="sivc:whatsapp" type="text">
           </div>
@@ -232,6 +246,18 @@
           <label for="sivc:email" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivc:email" id="sivc:email" type="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sivc:location" class="col-sm-2 col-form-label">Current location</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="sivc:location" id="sivc:location" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sivc:intent" class="col-sm-2 col-form-label">Intentions</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="sivc:intent" id="sivc:intent" type="text">
           </div>
         </div>
         <div class="form-group row">
@@ -247,28 +273,25 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:active-passport" class="col-sm-2 col-form-label">Does the individual have an active
-            passport?</label>
+          <label for="sivc:active-passport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivc:active-passport" id="sivc:active-passport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:passport-country" class="col-sm-2 col-form-label">Which country issued the passport?</label>
+          <label for="sivc:passport-country" class="col-sm-2 col-form-label">Which country's passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivc:passport-country" id="sivc:passport-country" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:possess-passport" class="col-sm-2 col-form-label">Does the individual have possession of the
-            passport?</label>
+          <label for="sivc:possess-passport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivc:possess-passport" id="sivc:possess-passport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:passport-valid" class="col-sm-2 col-form-label">If not is the passport still valid?
-            Expired?</label>
+          <label for="sivc:passport-valid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivc:passport-valid" id="sivc:passport-valid" type="text">
           </div>
@@ -292,17 +315,23 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:visa-possession" class="col-sm-2 col-form-label">Does the individual have the Visa in their
-            possession?</label>
+          <label for="sivc:visa-possession" class="col-sm-2 col-form-label">Are they carrying the visa?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivc:visa-possession" id="sivc:visa-possession" type="text">
           </div>
         </div>
-        <div class="form-group row">
-          <label for="sivc:visa-flight" class="col-sm-2 col-form-label">If this person has a Visa, were they scheduled to
+        <!--<div class="form-group row">
+          <label for="sivc:visa-flight" class="col-sm-2 col-form-label">If this person has a Visa, were they scheduled
+            to
             depart Afghanistan on a commercial flight before flights were cancelled?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivc:visa-flight" id="sivc:visa-flight" type="text">
+          </div>
+        </div> -->
+        <div class="form-group row">
+          <label for="sivc:notes" class="col-sm-2 col-form-label">Additional information</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="usc:notes" id="usc:notes" type="text">
           </div>
         </div>
       </div>
@@ -323,7 +352,7 @@
         <div class="form-group row">
           <label for="sivu:dob" class="col-sm-2 col-form-label">Date of Birth</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:dob" id="sivu:dob" type="text">
+            <input class="form-control" name="sivu:dob" id="sivu:dob" type="date">
           </div>
         </div>
         <div class="form-group row">
@@ -333,8 +362,7 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:whatsapp" class="col-sm-2 col-form-label">What is the contact info if the individual has
-            Whatsapp?</label>
+          <label for="sivu:whatsapp" class="col-sm-2 col-form-label">Whatsapp</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:whatsapp" id="sivu:whatsapp" type="text">
           </div>
@@ -343,6 +371,18 @@
           <label for="sivu:email" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:email" id="sivu:email" type="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sivu:location" class="col-sm-2 col-form-label">Current location</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="sivu:location" id="sivu:location" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="sivu:intent" class="col-sm-2 col-form-label">Intentions</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="sivu:intent" id="sivu:intent" type="text">
           </div>
         </div>
         <div class="form-group row">
@@ -358,28 +398,25 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:active-passport" class="col-sm-2 col-form-label">Does the individual have an active
-            passport?</label>
+          <label for="sivu:active-passport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:active-passport" id="sivu:active-passport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:passport-country" class="col-sm-2 col-form-label">Which country issued the passport?</label>
+          <label for="sivu:passport-country" class="col-sm-2 col-form-label">Which country's passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:passport-country" id="sivu:passport-country" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:possess-passport" class="col-sm-2 col-form-label">Does the individual have possession of the
-            passport?</label>
+          <label for="sivu:possess-passport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:possess-passport" id="sivu:possess-passport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:passport-valid" class="col-sm-2 col-form-label">If not, is the passport still valid?
-            Expired?</label>
+          <label for="sivu:passport-valid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:passport-valid" id="sivu:passport-valid" type="text">
           </div>
@@ -398,24 +435,30 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:dos-contact" class="col-sm-2 col-form-label">Has the individual been contacted by the US State
-            Department?</label>
+          <label for="sivu:dos-contact" class="col-sm-2 col-form-label">Has the individual been contacted by the US
+            gov?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:dos-contact" id="sivu:dos-contact" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:com-approved" class="col-sm-2 col-form-label">Has the SIV application been approved by Chief of
-            Mission?</label>
+          <label for="sivu:com-approved" class="col-sm-2 col-form-label">Has the SIV application been approved?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:com-approved" id="sivu:com-approved" type="text">
           </div>
         </div>
-        <div class="form-group row">
-          <label for="sivu:status-details" class="col-sm-2 col-form-label">Any other details on status of SIV or other Visa
+        <!--<div class="form-group row">
+          <label for="sivu:status-details" class="col-sm-2 col-form-label">Any other details on status of SIV or other
+            Visa
             application?</label>
           <div class="col-sm-10">
             <input class="form-control" name="sivu:status-details" id="sivu:status-details" type="text">
+          </div>
+        </div> -->
+        <div class="form-group row">
+          <label for="sivu:notes" class="col-sm-2 col-form-label">Additional information</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="sivu:notes" id="sivu:notes" type="text">
           </div>
         </div>
       </div>
@@ -436,7 +479,7 @@
         <div class="form-group row">
           <label for="other:dob" class="col-sm-2 col-form-label">Date of Birth</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:dob" id="other:dob" type="text">
+            <input class="form-control" name="other:dob" id="other:dob" type="date">
           </div>
         </div>
         <div class="form-group row">
@@ -446,8 +489,7 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:whatsapp" class="col-sm-2 col-form-label">What is the contact info if the individual has
-            Whatsapp?</label>
+          <label for="other:whatsapp" class="col-sm-2 col-form-label">Whatsapp</label>
           <div class="col-sm-10">
             <input class="form-control" name="other:whatsapp" id="other:whatsapp" type="text">
           </div>
@@ -456,6 +498,18 @@
           <label for="other:email" class="col-sm-2 col-form-label">Email</label>
           <div class="col-sm-10">
             <input class="form-control" name="other:email" id="other:email" type="email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="other:location" class="col-sm-2 col-form-label">Current location</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="other:location" id="other:location" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="other:intent" class="col-sm-2 col-form-label">Intentions</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="other:intent" id="other:intent" type="text">
           </div>
         </div>
         <div class="form-group row">
@@ -471,28 +525,25 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:active-passport" class="col-sm-2 col-form-label">Does the individual have an active
-            passport?</label>
+          <label for="other:active-passport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="other:active-passport" id="other:active-passport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:passport-country" class="col-sm-2 col-form-label">Which country issued the passport?</label>
+          <label for="other:passport-country" class="col-sm-2 col-form-label">Which country's passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="other:passport-country" id="other:passport-country" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:possess-passport" class="col-sm-2 col-form-label">Does the individual have possession of the
-            passport?</label>
+          <label for="other:possess-passport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
             <input class="form-control" name="other:possess-passport" id="other:possess-passport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:passport-valid" class="col-sm-2 col-form-label">If not is the passport still valid?
-            Expired?</label>
+          <label for="other:passport-valid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
             <input class="form-control" name="other:passport-valid" id="other:passport-valid" type="text">
           </div>
@@ -504,16 +555,23 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:form-submit" class="col-sm-2 col-form-label">Has that agency submitted Form I-129 request for a
-            P1/P2 Visa to US State Dept?</label>
+          <label for="other:form-submit" class="col-sm-2 col-form-label">Has that agency submitted Form I-129
+            request?</label>
           <div class="col-sm-10">
             <input class="form-control" name="other:form-submit" id="other:form-submit" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:at-risk" class="col-sm-2 col-form-label">Why is that individual considered "at-risk?"</label>
+          <label for="other:at-risk" class="col-sm-2 col-form-label">Why is that individual considered
+            "at-risk?"</label>
           <div class="col-sm-10">
             <input class="form-control" name="other:at-risk" id="other:at-risk" type="text">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="other:notes" class="col-sm-2 col-form-label">Additional information</label>
+          <div class="col-sm-10">
+            <input class="form-control" name="other:notes" id="other:notes" type="text">
           </div>
         </div>
       </div>
