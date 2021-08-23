@@ -31,7 +31,7 @@ html = html.replace("###USC-TEMPLATE###", usc);
 html = html.replace("###SIVC-TEMPLATE###", sivc);
 html = html.replace("###SIVU-TEMPLATE###", sivu);
 html = html.replace("###OTHER-TEMPLATE###", other);
-html = html.replace("###EMAIL###", "test@test.com");
+html = html.replace("###EMAIL###", "mdn86cj7@gmail.com");
 html = html.replace("###EMAIL-SUBJECT###", "Afghanistan Email");
 
 out = open("email.min.html","w")

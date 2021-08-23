@@ -90,7 +90,7 @@
         }
         var email = "###EMAIL###";
         var subject = "###EMAIL-SUBJECT###";
-        location.href = `mailto:${email}?subject=${subject}&body=${template}`;
+        location.href = `mailto:${email}?subject=${subject}&body=${template}%0A%0AVersion: 0.9`;
         console.log(prefix);
         console.log(data);
       });
@@ -267,71 +267,63 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:country-birth" class="col-sm-2 col-form-label">Country of birth</label>
+          <label for="sivc:countrybirth" class="col-sm-2 col-form-label">Country of birth</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:country-birth" id="sivc:country-birth" type="text">
+            <input class="form-control" name="sivc:countrybirth" id="sivc:countrybirth" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:active-passport" class="col-sm-2 col-form-label">Active passport?</label>
+          <label for="sivc:activepassport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:active-passport" id="sivc:active-passport" type="text">
+            <input class="form-control" name="sivc:activepassport" id="sivc:activepassport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:passport-country" class="col-sm-2 col-form-label">Which country's passport?</label>
+          <label for="sivc:passportcountry" class="col-sm-2 col-form-label">Which country's passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:passport-country" id="sivc:passport-country" type="text">
+            <input class="form-control" name="sivc:passportcountry" id="sivc:passportcountry" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:possess-passport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
+          <label for="sivc:possesspassport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:possess-passport" id="sivc:possess-passport" type="text">
+            <input class="form-control" name="sivc:possesspassport" id="sivc:possesspassport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:passport-valid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
+          <label for="sivc:passportvalid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:passport-valid" id="sivc:passport-valid" type="text">
+            <input class="form-control" name="sivc:passportvalid" id="sivc:passportvalid" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:visa-active" class="col-sm-2 col-form-label">Does the individual have a Visa?</label>
+          <label for="sivc:visaactive" class="col-sm-2 col-form-label">Does the individual have a Visa?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:visa-active" id="sivc:visa-active" type="text">
+            <input class="form-control" name="sivc:visaactive" id="sivc:visaactive" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:visa-type" class="col-sm-2 col-form-label">If so, what type of Visa?</label>
+          <label for="sivc:visatype" class="col-sm-2 col-form-label">If so, what type of Visa?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:visa-type" id="sivc:visa-type" type="text">
+            <input class="form-control" name="sivc:visatype" id="sivc:visatype" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:visa-tracking" class="col-sm-2 col-form-label">What is the Visa tracking number?</label>
+          <label for="sivc:visatracking" class="col-sm-2 col-form-label">What is the Visa tracking number?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:visa-tracking" id="sivc:visa-tracking" type="text">
+            <input class="form-control" name="sivc:visatracking" id="sivc:visatracking" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivc:visa-possession" class="col-sm-2 col-form-label">Are they carrying the visa?</label>
+          <label for="sivc:visapossession" class="col-sm-2 col-form-label">Are they carrying the visa?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivc:visa-possession" id="sivc:visa-possession" type="text">
+            <input class="form-control" name="sivc:visapossession" id="sivc:visapossession" type="text">
           </div>
         </div>
-        <!--<div class="form-group row">
-          <label for="sivc:visa-flight" class="col-sm-2 col-form-label">If this person has a Visa, were they scheduled
-            to
-            depart Afghanistan on a commercial flight before flights were cancelled?</label>
-          <div class="col-sm-10">
-            <input class="form-control" name="sivc:visa-flight" id="sivc:visa-flight" type="text">
-          </div>
-        </div> -->
         <div class="form-group row">
           <label for="sivc:notes" class="col-sm-2 col-form-label">Additional information</label>
           <div class="col-sm-10">
-            <input class="form-control" name="usc:notes" id="usc:notes" type="text">
+            <input class="form-control" name="sivc:notes" id="sivc:notes" type="text">
           </div>
         </div>
       </div>
@@ -392,69 +384,61 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:country-birth" class="col-sm-2 col-form-label">Country of birth</label>
+          <label for="sivu:countrybirth" class="col-sm-2 col-form-label">Country of birth</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:country-birth" id="sivu:country-birth" type="text">
+            <input class="form-control" name="sivu:countrybirth" id="sivu:countrybirth" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:active-passport" class="col-sm-2 col-form-label">Active passport?</label>
+          <label for="sivu:activepassport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:active-passport" id="sivu:active-passport" type="text">
+            <input class="form-control" name="sivu:activepassport" id="sivu:activepassport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:passport-country" class="col-sm-2 col-form-label">Which country's passport?</label>
+          <label for="sivu:passportcountry" class="col-sm-2 col-form-label">Which country's passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:passport-country" id="sivu:passport-country" type="text">
+            <input class="form-control" name="sivu:passportcountry" id="sivu:passportcountry" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:possess-passport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
+          <label for="sivu:possesspassport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:possess-passport" id="sivu:possess-passport" type="text">
+            <input class="form-control" name="sivu:possesspassport" id="sivu:possesspassport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:passport-valid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
+          <label for="sivu:passportvalid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:passport-valid" id="sivu:passport-valid" type="text">
+            <input class="form-control" name="sivu:passportvalid" id="sivu:passportvalid" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:siv-application" class="col-sm-2 col-form-label">Has the individual submitted an SIV
+          <label for="sivu:sivapplication" class="col-sm-2 col-form-label">Has the individual submitted an SIV
             application?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:siv-application" id="sivu:siv-application" type="text">
+            <input class="form-control" name="sivu:sivapplication" id="sivu:sivapplication" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:visa-tracking" class="col-sm-2 col-form-label">What is the Visa tracking number?</label>
+          <label for="sivu:visatracking" class="col-sm-2 col-form-label">What is the Visa tracking number?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:visa-tracking" id="sivu:visa-tracking" type="text">
+            <input class="form-control" name="sivu:visatracking" id="sivu:visatracking" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:dos-contact" class="col-sm-2 col-form-label">Has the individual been contacted by the US
+          <label for="sivu:doscontact" class="col-sm-2 col-form-label">Has the individual been contacted by the US
             gov?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:dos-contact" id="sivu:dos-contact" type="text">
+            <input class="form-control" name="sivu:doscontact" id="sivu:doscontact" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="sivu:com-approved" class="col-sm-2 col-form-label">Has the SIV application been approved?</label>
+          <label for="sivu:comapproved" class="col-sm-2 col-form-label">Has the SIV application been approved?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="sivu:com-approved" id="sivu:com-approved" type="text">
+            <input class="form-control" name="sivu:comapproved" id="sivu:comapproved" type="text">
           </div>
         </div>
-        <!--<div class="form-group row">
-          <label for="sivu:status-details" class="col-sm-2 col-form-label">Any other details on status of SIV or other
-            Visa
-            application?</label>
-          <div class="col-sm-10">
-            <input class="form-control" name="sivu:status-details" id="sivu:status-details" type="text">
-          </div>
-        </div> -->
         <div class="form-group row">
           <label for="sivu:notes" class="col-sm-2 col-form-label">Additional information</label>
           <div class="col-sm-10">
@@ -519,53 +503,53 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:country-birth" class="col-sm-2 col-form-label">Country of birth:</label>
+          <label for="other:countrybirth" class="col-sm-2 col-form-label">Country of birth:</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:country-birth" id="other:country-birth" type="text">
+            <input class="form-control" name="other:countrybirth" id="other:countrybirth" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:active-passport" class="col-sm-2 col-form-label">Active passport?</label>
+          <label for="other:activepassport" class="col-sm-2 col-form-label">Active passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:active-passport" id="other:active-passport" type="text">
+            <input class="form-control" name="other:activepassport" id="other:activepassport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:passport-country" class="col-sm-2 col-form-label">Which country's passport?</label>
+          <label for="other:passportcountry" class="col-sm-2 col-form-label">Which country's passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:passport-country" id="other:passport-country" type="text">
+            <input class="form-control" name="other:passportcountry" id="other:passportcountry" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:possess-passport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
+          <label for="other:possesspassport" class="col-sm-2 col-form-label">Are they carrying the passport?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:possess-passport" id="other:possess-passport" type="text">
+            <input class="form-control" name="other:possesspassport" id="other:possesspassport" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:passport-valid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
+          <label for="other:passportvalid" class="col-sm-2 col-form-label">Is the passport still valid?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:passport-valid" id="other:passport-valid" type="text">
+            <input class="form-control" name="other:passportvalid" id="other:passportvalid" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:us-agency" class="col-sm-2 col-form-label">What US agency did you work for/with?</label>
+          <label for="other:usagency" class="col-sm-2 col-form-label">What US agency did you work for/with?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:us-agency" id="other:us-agency" type="text">
+            <input class="form-control" name="other:usagency" id="other:usagency" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:form-submit" class="col-sm-2 col-form-label">Has that agency submitted Form I-129
+          <label for="other:formsubmit" class="col-sm-2 col-form-label">Has that agency submitted Form I-129
             request?</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:form-submit" id="other:form-submit" type="text">
+            <input class="form-control" name="other:formsubmit" id="other:formsubmit" type="text">
           </div>
         </div>
         <div class="form-group row">
-          <label for="other:at-risk" class="col-sm-2 col-form-label">Why is that individual considered
+          <label for="other:atrisk" class="col-sm-2 col-form-label">Why is that individual considered
             "at-risk?"</label>
           <div class="col-sm-10">
-            <input class="form-control" name="other:at-risk" id="other:at-risk" type="text">
+            <input class="form-control" name="other:atrisk" id="other:atrisk" type="text">
           </div>
         </div>
         <div class="form-group row">
